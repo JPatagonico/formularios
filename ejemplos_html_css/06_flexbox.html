@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceptos CSS: Flexbox</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      color: #333;
+    }
+    h1, h2 {
+      text-decoration: underline;
+    }
+    .caja-demo {
+      padding: 10px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+    }
+    .item {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    /* --- Introducción a Flexbox --- */
+    /* Flexbox es un modelo de diseño unidimensional. Se aplica a un contenedor para organizar sus hijos (items). */
+    /* Para activarlo, usamos 'display: flex' en el contenedor. */
+
+    .flex-container {
+      display: flex;
+    }
+
+    /* --- 1. justify-content: Alineación en el eje principal (horizontal por defecto) --- */
+    .jc-flex-start { justify-content: flex-start; } /* (default) Items al inicio */
+    .jc-flex-end { justify-content: flex-end; } /* Items al final */
+    .jc-center { justify-content: center; } /* Items al centro */
+    .jc-space-between { justify-content: space-between; } /* Espacio igual entre items */
+    .jc-space-around { justify-content: space-around; } /* Espacio igual alrededor de cada item */
+    .jc-space-evenly { justify-content: space-evenly; } /* Espacio igual entre y alrededor de los items */
+
+    /* --- 2. align-items: Alineación en el eje secundario (vertical por defecto) --- */
+    .ai-flex-start { align-items: flex-start; } /* Items arriba */
+    .ai-center { align-items: center; } /* Items centrados verticalmente */
+    .ai-flex-end { align-items: flex-end; } /* Items abajo */
+    .ai-stretch { align-items: stretch; } /* (default) Items se estiran para ocupar la altura */
+
+    /* --- 3. flex-direction: Cambia la dirección del eje principal --- */
+    .direction-row { flex-direction: row; } /* (default) Eje principal es horizontal */
+    .direction-column { flex-direction: column; } /* Eje principal es vertical */
+
+    /* --- 4. flex-wrap: Permite que los items se envuelvan en múltiples líneas --- */
+    .wrap-yes { flex-wrap: wrap; }
+
+    /* --- 5. gap: Espacio entre items (más moderno que usar márgenes) --- */
+    .gap-20 { gap: 20px; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Layout con Flexbox</h1>
+
+  <h2>1. <code>justify-content</code> (eje horizontal)</h2>
+  <p><code>space-between</code>:</p>
+  <div class="caja-demo flex-container jc-space-between">
+    <div class="item">1</div> <div class="item">2</div> <div class="item">3</div>
+  </div>
+  <p><code>center</code>:</p>
+  <div class="caja-demo flex-container jc-center">
+    <div class="item">1</div> <div class="item">2</div> <div class="item">3</div>
+  </div>
+
+  <h2>2. <code>align-items</code> (eje vertical)</h2>
+  <p><code>center</code>:</p>
+  <div class="caja-demo flex-container ai-center" style="height: 150px;">
+    <div class="item">1</div> <div class="item" style="font-size: 0.8em;">2</div> <div class="item">3</div>
+  </div>
+  <p><code>flex-end</code>:</p>
+  <div class="caja-demo flex-container ai-flex-end" style="height: 150px;">
+    <div class="item">1</div> <div class="item">2</div> <div class="item">3</div>
+  </div>
+
+  <h2>3. <code>flex-direction: column</code></h2>
+  <div class="caja-demo flex-container direction-column" style="height: 300px;">
+    <div class="item">1</div> <div class="item">2</div> <div class="item">3</div>
+  </div>
+
+  <h2>4. <code>flex-wrap</code> y <code>gap</code></h2>
+  <p>Con <code>flex-wrap: wrap</code> y <code>gap: 20px</code>, los items fluyen a la siguiente línea si no caben.</p>
+  <div class="caja-demo flex-container wrap-yes gap-20">
+    <div class="item">1</div> <div class="item">2</div> <div class="item">3</div>
+    <div class="item">4</div> <div class="item">5</div> <div class="item">6</div>
+    <div class="item">7</div>
+  </div>
+
+</body>
+</html>

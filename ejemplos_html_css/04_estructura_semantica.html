@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceptos CSS: Estructura Semántica</title>
+  <style>
+    /* --- Estilos para visualizar la estructura --- */
+    body {
+      font-family: sans-serif;
+      color: #333;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Cada etiqueta semántica principal tendrá un borde y un padding para que podamos ver sus límites. */
+    header, nav, main, article, aside, footer {
+      display: block; /* Asegura que los navegadores antiguos traten a estas etiquetas como bloques */
+      margin: 10px;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    header {
+      background-color: #add8e6; /* Azul claro */
+      border: 2px solid #4682b4; /* Azul acero */
+    }
+
+    nav {
+      background-color: #f0e68c; /* Amarillo caqui */
+      border: 2px solid #ffd700; /* Oro */
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav li {
+      display: inline-block; /* Pone los elementos del menú en línea */
+      margin-right: 15px;
+    }
+
+    main {
+      background-color: #ffffff; /* Blanco */
+      border: 2px solid #ccc;
+    }
+
+    article {
+      background-color: #dcedc8; /* Verde claro */
+      border: 2px solid #8bc34a; /* Verde */
+    }
+
+    aside {
+      background-color: #ffccbc; /* Coral claro */
+      border: 2px solid #ff5722; /* Naranja oscuro */
+      float: right; /* Hacemos que flote a la derecha para simular una barra lateral */
+      width: 30%;
+    }
+
+    footer {
+      background-color: #cfd8dc; /* Gris azulado claro */
+      border: 2px solid #607d8b; /* Gris azulado */
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER: Contiene la introducción o elementos de navegación. Suele tener el logo y el título principal. -->
+  <header>
+    <h1>El Blog del Desarrollador</h1>
+    <p>Noticias y tutoriales sobre desarrollo web.</p>
+  </header>
+
+  <!-- NAV: Contiene los enlaces de navegación principales del sitio. -->
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Tutoriales</a></li>
+      <li><a href="#">Sobre Mí</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN: Es el contenedor para el contenido principal y único de la página. -->
+  <main>
+    
+    <!-- ASIDE: Contenido secundario o relacionado (barra lateral). Lo ponemos aquí para que se relacione con el contenido principal. -->
+    <aside>
+      <h3>Recursos Adicionales</h3>
+      <ul>
+        <li><a href="#">Documentación de HTML</a></li>
+        <li><a href="#">Guía de CSS</a></li>
+      </ul>
+    </aside>
+
+    <!-- ARTICLE: Es un bloque de contenido autocontenido y distribuible (como una noticia, un post de blog). -->
+    <article>
+      <h2>¿Qué es el HTML Semántico?</h2>
+      <p>El HTML semántico consiste en usar las etiquetas de HTML correctas para el propósito correcto. En lugar de usar <code>&lt;div&gt;</code> para todo, usamos etiquetas como <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, y <code>&lt;footer&gt;</code>.</p>
+      <p><strong>Beneficios:</strong> Mejora la accesibilidad (para lectores de pantalla), el SEO (para los buscadores) y la mantenibilidad del código.</p>
+    </article>
+
+    <article>
+      <h2>Mi primer post</h2>
+      <p>Este es el contenido de mi primer post en el blog. ¡Bienvenidos!</p>
+    </article>
+
+  </main>
+
+  <!-- FOOTER: Contiene el pie de página del sitio. Información de copyright, enlaces secundarios, etc. -->
+  <footer>
+    <p>&copy; 2025 El Blog del Desarrollador. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

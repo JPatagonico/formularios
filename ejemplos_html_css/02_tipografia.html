@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceptos CSS: Tipografía</title>
+
+  <!-- 1. Importar fuentes externas (Ej: Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: sans-serif; /* Fuente de respaldo */
+      padding: 20px;
+      color: #333;
+    }
+    .ejemplo {
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
+    h1, h2 {
+      text-decoration: underline;
+    }
+
+    /* --- Ejemplo 1: font-family --- */
+    /* Especifica la fuente para un elemento. Se pueden poner varias opciones (fallbacks). */
+    .font-sans-serif {
+      /* 'Roboto' es una fuente importada. Si no carga, usará 'Helvetica', y si no, cualquier sans-serif disponible. */
+      font-family: 'Roboto', Helvetica, sans-serif;
+    }
+    .font-serif {
+      /* 'Lora' es una fuente importada. Si no, 'Georgia', y si no, cualquier serif. */
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    /* --- Ejemplo 2: font-size --- */
+    /* Define el tamaño del texto. */
+    .size-px { font-size: 18px; } /* Píxeles: tamaño fijo. */
+    .size-rem { font-size: 1.2rem; } /* REM: relativo al tamaño de fuente del elemento raíz (<html>). Bueno para accesibilidad. */
+    .size-em { font-size: 1.2em; } /* EM: relativo al tamaño de fuente del elemento padre. */
+
+    /* --- Ejemplo 3: font-weight --- */
+    /* Define el grosor de la fuente. */
+    .weight-normal { font-weight: 400; } /* Valor numérico para normal */
+    .weight-bold { font-weight: 700; } /* Valor numérico para negrita */
+    .weight-keyword { font-weight: bold; } /* También se puede usar la palabra clave */
+
+    /* --- Ejemplo 4: font-style --- */
+    /* Define el estilo de la fuente. */
+    .style-normal { font-style: normal; }
+    .style-italic { font-style: italic; } /* Pone el texto en cursiva */
+
+    /* --- Ejemplo 5: line-height --- */
+    /* Define la altura de la línea, es decir, el espacio vertical entre líneas de texto. */
+    .line-height-small { line-height: 1; } /* Espaciado simple, puede parecer apretado. */
+    .line-height-normal { line-height: 1.6; } /* Un valor sin unidad es recomendado. Se multiplica por el font-size. */
+    .line-height-big { line-height: 2.5; } /* Espaciado doble y medio. */
+
+  </style>
+</head>
+<body>
+
+  <h1>Ejemplos de Tipografía en CSS</h1>
+
+  <div class="ejemplo">
+    <h2>1. <code>font-family</code>: Tipo de Fuente</h2>
+    <p class="font-sans-serif">Este párrafo usa la fuente 'Roboto' (sans-serif), que es limpia y moderna.</p>
+    <p class="font-serif">Este párrafo usa la fuente 'Lora' (serif), que tiene adornos y es más tradicional.</p>
+  </div>
+
+  <div class="ejemplo">
+    <h2>2. <code>font-size</code>: Tamaño de Fuente</h2>
+    <p class="size-px">Texto a 18px (píxeles).</p>
+    <p class="size-rem">Texto a 1.2rem (relativo a la raíz).</p>
+    <div style="font-size: 20px;">
+      <p class="size-em">Texto a 1.2em (1.2 * 20px = 24px).</p>
+    </div>
+  </div>
+
+  <div class="ejemplo font-sans-serif">
+    <h2>3. <code>font-weight</code>: Grosor de Fuente</h2>
+    <p class="weight-normal">Este es un texto con grosor normal (400).</p>
+    <p class="weight-bold">Este es un texto en negrita (700).</p>
+  </div>
+
+  <div class="ejemplo font-serif">
+    <h2>4. <code>font-style</code>: Estilo de Fuente</h2>
+    <p class="style-normal">Texto con estilo normal.</p>
+    <p class="style-italic">Texto en cursiva (itálica) para dar énfasis.</p>
+    <p>La fuente 'Lora' importada también tiene una variante en itálica, por eso se ve tan bien. <span class="style-italic weight-bold">Se pueden combinar estilos, como itálica y negrita.</span></p>
+  </div>
+
+  <div class="ejemplo">
+    <h2>5. <code>line-height</code>: Altura de Línea (Interlineado)</h2>
+    <p class="line-height-small">Este texto tiene un interlineado pequeño (1). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.</p>
+    <p class="line-height-normal">Este texto tiene un interlineado normal y legible (1.6). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.</p>
+    <p class="line-height-big">Este texto tiene un interlineado grande (2.5). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.</p>
+  </div>
+
+</body>
+</html>

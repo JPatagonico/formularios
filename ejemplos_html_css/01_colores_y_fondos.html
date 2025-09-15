@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceptos CSS: Colores y Fondos</title>
+  <style>
+    /* --- Estilos Generales --- */
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    .ejemplo {
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
+    h2 {
+      text-decoration: underline;
+    }
+
+    /* --- Ejemplo 1: Propiedad 'color' --- */
+    /* La propiedad 'color' cambia el color del texto de un elemento. */
+
+    /* Usando una palabra clave (keyword) */
+    .color-keyword {
+      color: darkred;
+    }
+
+    /* Usando un código Hexadecimal (HEX) - #RRGGBB */
+    .color-hex {
+      color: #008080; /* Un tono de verde azulado */
+    }
+
+    /* Usando RGB (Red, Green, Blue) - cada valor de 0 a 255 */
+    .color-rgb {
+      color: rgb(139, 0, 139); /* Un tono de magenta */
+    }
+
+    /* Usando RGBA (RGB + Alpha/Transparencia) - alpha de 0.0 (transparente) a 1.0 (opaco) */
+    .color-rgba {
+      color: rgba(255, 140, 0, 0.7); /* Naranja oscuro con 70% de opacidad */
+    }
+
+
+    /* --- Ejemplo 2: Propiedad 'background-color' --- */
+    /* 'background-color' establece el color de fondo de un elemento. */
+    .fondo-solido {
+      background-color: #e6e6fa; /* Un lavanda claro */
+    }
+
+
+    /* --- Ejemplo 3: Propiedad 'background-image' --- */
+    /* 'background-image' establece una imagen como fondo. */
+    .fondo-imagen {
+      background-image: url("https://via.placeholder.com/300x100.png?text=Imagen+de+Fondo");
+      color: white; /* Cambiamos el color del texto para que sea legible sobre la imagen */
+      text-shadow: 2px 2px 4px #000000; /* Añadimos una sombra al texto para mejorar la legibilidad */
+    }
+
+    /* --- Ejemplo 4: Propiedades de 'background' combinadas --- */
+    .fondo-combinado {
+      background-color: #4682b4; /* Se mostrará si la imagen no carga */
+      background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+      
+      /* 'background-repeat' controla si la imagen se repite. */
+      background-repeat: repeat; /* repeat (default), no-repeat, repeat-x, repeat-y */
+
+      /* 'background-position' controla la posición inicial de la imagen. */
+      background-position: center; /* top, bottom, left, right, center */
+    }
+
+    /* --- Ejemplo 5: Opacidad --- */
+    /* 'opacity' afecta la transparencia de TODO el elemento, incluyendo su contenido. */
+    .opacidad {
+      background-color: steelblue;
+      opacity: 0.5; /* El elemento entero (fondo y texto) está al 50% de opacidad */
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Ejemplo 1: Colores de Texto</h1>
+  <div class="ejemplo">
+    <h2>La propiedad <code>color</code></h2>
+    <p class="color-keyword">Este texto usa una palabra clave para el color (darkred).</p>
+    <p class="color-hex">Este texto usa un código hexadecimal (#008080).</p>
+    <p class="color-rgb">Este texto usa valores RGB (rgb(139, 0, 139)).</p>
+    <p class="color-rgba">Este texto usa valores RGBA para añadir transparencia (rgba(255, 140, 0, 0.7)).</p>
+  </div>
+
+  <h1>Ejemplo 2: Colores de Fondo</h1>
+  <div class="ejemplo fondo-solido">
+    <h2>La propiedad <code>background-color</code></h2>
+    <p>Este contenedor tiene un color de fondo sólido aplicado con CSS.</p>
+  </div>
+
+  <h1>Ejemplo 3: Imagen de Fondo</h1>
+  <div class="ejemplo fondo-imagen">
+    <h2>La propiedad <code>background-image</code></h2>
+    <p>Este contenedor tiene una imagen de fondo. El texto tiene una sombra para que sea más fácil de leer.</p>
+  </div>
+
+  <h1>Ejemplo 4: Propiedades de Fondo Combinadas</h1>
+  <div class="ejemplo fondo-combinado">
+    <h2>Combinando propiedades de <code>background</code></h2>
+    <p>Este contenedor tiene un color de fondo, una imagen de textura que se repite y está centrada.</p>
+  </div>
+
+  <h1>Ejemplo 5: Opacidad</h1>
+  <div class="ejemplo">
+      <h2>La propiedad <code>opacity</code></h2>
+      <div class="opacidad">
+          <p>Tanto el fondo como este texto tienen una opacidad del 50%.</p>
+      </div>
+      <p>Compara la opacidad del texto de arriba con este texto normal. La propiedad 'opacity' afecta a todo el elemento.</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceptos CSS: El Modelo de Caja</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+    h1, h2 {
+      text-decoration: underline;
+    }
+    .container {
+      background-color: #fff3e0; /* Naranja muy claro */
+      padding: 20px;
+      border: 2px dashed #ff9800; /* Naranja */
+    }
+
+    /* --- El Modelo de Caja (Box Model) --- */
+    /* Todo elemento en la web es una caja. El modelo de caja describe cómo se construyen estas cajas. */
+    /* Se compone de 4 partes, de adentro hacia afuera: */
+    /* 1. Content (Contenido): El texto, imagen, etc. */
+    /* 2. Padding (Relleno): Espacio transparente alrededor del contenido. */
+    /* 3. Border (Borde): Una línea que rodea el padding y el contenido. */
+    /* 4. Margin (Margen): Espacio transparente fuera del borde, que empuja a otros elementos. */
+
+    .box {
+      /* 1. Content */
+      width: 300px; /* Ancho del área de contenido */
+      height: 100px; /* Alto del área de contenido */
+      background-color: #c8e6c9; /* Verde claro para ver el área de contenido y padding */
+
+      /* 2. Padding (Relleno) */
+      padding: 20px; /* 20px de relleno en los 4 lados */
+      /* padding-top, padding-right, padding-bottom, padding-left */
+
+      /* 3. Border (Borde) */
+      border: 10px solid #4caf50; /* Borde sólido de 10px de grosor */
+
+      /* 4. Margin (Margen) */
+      margin: 30px; /* 30px de margen en los 4 lados */
+      /* margin-top, margin-right, margin-bottom, margin-left */
+    }
+
+    .box-2 {
+      background-color: #bbdefb; /* Azul claro */
+      border: 10px solid #2196f3; /* Azul */
+      width: 250px;
+      padding: 15px;
+      margin: 30px;
+    }
+
+    /* --- box-sizing --- */
+    /* Por defecto (content-box), el width/height se aplica SOLO al contenido. */
+    /* El ancho total de .box es: 300px (width) + 40px (padding) + 20px (border) = 360px */
+
+    /* Con 'border-box', el width/height INCLUYE el padding y el border. */
+    .border-box-example {
+      box-sizing: border-box;
+      width: 360px; /* El ancho total de la caja será 360px */
+      padding: 20px; /* 40px en total */
+      border: 10px solid #f44336; /* 20px en total */
+      background-color: #ffcdd2; /* Rojo claro */
+      margin: 30px;
+
+      /* El área de contenido ahora se encoge para hacer espacio: */
+      /* 360px - 40px (padding) - 20px (border) = 300px de contenido. */
+      /* Esto hace que los cálculos de layout sean MUCHO más intuitivos. */
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>El Modelo de Caja (Box Model)</h1>
+
+  <div class="container">
+    <h2>Caja con <code>box-sizing: content-box</code> (por defecto)</h2>
+    <div class="box">
+      Contenido (300px) + Padding (20px) + Border (10px). Ancho total: 360px.
+    </div>
+    <div class="box-2">
+      Soy otra caja. Mi margen de 30px se suma al margen de 30px de la caja de arriba, creando 60px de espacio vertical entre nosotras.
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Caja con <code>box-sizing: border-box</code></h2>
+    <div class="border-box-example">
+      Mi ancho total es exactamente 360px, porque el padding y el borde están incluidos en esa medida. ¡Mucho más fácil!
+    </div>
+  </div>
+
+</body>
+</html>

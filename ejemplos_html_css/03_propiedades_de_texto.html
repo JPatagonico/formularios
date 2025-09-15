@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceptos CSS: Propiedades de Texto</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      color: #333;
+    }
+    .ejemplo {
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
+    h1, h2 {
+      text-decoration: underline;
+    }
+    p { 
+      /* Se aplica a todos los párrafos para mejor demostración */
+      line-height: 1.6;
+    }
+
+    /* --- Ejemplo 1: text-align --- */
+    /* Controla la alineación horizontal del texto. */
+    .align-left { text-align: left; } /* Por defecto en idiomas de izquierda a derecha */
+    .align-center { text-align: center; }
+    .align-right { text-align: right; }
+    .align-justify { text-align: justify; } /* Estira las líneas para que cada una tenga el mismo ancho. */
+
+    /* --- Ejemplo 2: text-decoration --- */
+    /* Añade líneas decorativas al texto. */
+    .deco-underline { text-decoration: underline; }
+    .deco-overline { text-decoration: overline; }
+    .deco-line-through { text-decoration: line-through; } /* Tachado */
+    .deco-none { text-decoration: none; } /* Útil para quitar el subrayado de los enlaces */
+    .deco-combined { text-decoration: underline overline wavy red; } /* Se pueden combinar estilos, colores y tipos */
+
+    /* --- Ejemplo 3: text-transform --- */
+    /* Controla las mayúsculas y minúsculas del texto. */
+    .transform-uppercase { text-transform: uppercase; } /* TODO EN MAYÚSCULAS */
+    .transform-lowercase { text-transform: lowercase; } /* todo en minúsculas */
+    .transform-capitalize { text-transform: capitalize; } /* Pone En Mayúscula La Primera Letra De Cada Palabra */
+
+    /* --- Ejemplo 4: letter-spacing y word-spacing --- */
+    /* Controlan el espacio entre letras y palabras. */
+    .letter-spacing-wide { letter-spacing: 4px; } /* Espacio extra entre letras */
+    .letter-spacing-tight { letter-spacing: -1.5px; } /* Menos espacio entre letras */
+    .word-spacing-wide { word-spacing: 15px; } /* Espacio extra entre palabras */
+
+  </style>
+</head>
+<body>
+
+  <h1>Ejemplos de Propiedades de Texto en CSS</h1>
+
+  <div class="ejemplo">
+    <h2>1. <code>text-align</code>: Alineación de Texto</h2>
+    <p class="align-left">Texto alineado a la izquierda (comportamiento por defecto).</p>
+    <p class="align-center">Texto centrado, ideal para títulos.</p>
+    <p class="align-right">Texto alineado a la derecha.</p>
+    <p class="align-justify">Texto justificado. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat tempor.</p>
+  </div>
+
+  <div class="ejemplo">
+    <h2>2. <code>text-decoration</code>: Decoración de Texto</h2>
+    <p class="deco-underline">Texto con subrayado.</p>
+    <p class="deco-overline">Texto con línea superior.</p>
+    <p class="deco-line-through">Texto tachado.</p>
+    <a href="#" class="deco-none">Este enlace no tiene subrayado.</a>
+    <p class="deco-combined">Decoración combinada y con estilo.</p>
+  </div>
+
+  <div class="ejemplo">
+    <h2>3. <code>text-transform</code>: Transformación de Texto</h2>
+    <p class="transform-uppercase">Este texto se ha convertido a mayúsculas con CSS.</p>
+    <p class="transform-lowercase">ESTE TEXTO SE HA CONVERTIDO A MINÚSCULAS CON CSS.</p>
+    <p class="transform-capitalize">este texto capitaliza la primera letra de cada palabra.</p>
+  </div>
+
+  <div class="ejemplo">
+    <h2>4. Espaciado de Texto</h2>
+    <p class="letter-spacing-wide">Texto con espaciado entre letras (letter-spacing) aumentado.</p>
+    <p class="letter-spacing-tight">Texto con espaciado entre letras reducido.</p>
+    <p class="word-spacing-wide">Texto con espaciado entre palabras (word-spacing) aumentado.</p>
+  </div>
+
+</body>
+</html>

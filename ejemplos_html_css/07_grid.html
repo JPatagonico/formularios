@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceptos CSS: Grid</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      color: #333;
+    }
+    h1, h2 {
+      text-decoration: underline;
+    }
+    .caja-demo {
+      padding: 10px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+    }
+    .item {
+      background-color: #9b59b6; /* Morado */
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    /* --- Introducción a Grid --- */
+    /* Grid es un modelo de diseño bidimensional (filas y columnas). Se activa con 'display: grid'. */
+
+    .grid-container {
+      display: grid;
+      /* 'gap' es la forma moderna de definir el espacio entre celdas. */
+      gap: 15px;
+    }
+
+    /* --- 1. grid-template-columns: Define las columnas --- */
+    .g-cols-3 {
+      /* Crea 3 columnas de igual tamaño. 'fr' es una unidad fraccional que distribuye el espacio disponible. */
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .g-cols-mixed {
+      /* Crea 3 columnas con tamaños específicos. */
+      grid-template-columns: 100px auto 200px;
+    }
+
+    /* --- 2. grid-template-rows: Define las filas --- */
+    .g-rows-2 {
+      grid-template-columns: 1fr 1fr 1fr; /* Definimos columnas para que se vea el efecto */
+      /* Crea 2 filas con alturas específicas. */
+      grid-template-rows: 100px 50px;
+    }
+
+    /* --- 3. Posicionamiento de items --- */
+    .g-posicion {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: repeat(4, 1fr); /* Crea 4 columnas de 1fr cada una */
+      grid-template-rows: auto auto;
+    }
+
+    .item-header {
+      /* El item comienza en la línea de columna 1 y se extiende hasta la línea 5 (que es el final) */
+      grid-column-start: 1;
+      grid-column-end: 5;
+      /* Forma corta: grid-column: 1 / 5; */
+      background-color: #16a085; /* Verde azulado */
+    }
+
+    .item-sidebar {
+      /* El item comienza en la línea de fila 2 y se extiende hasta la 4 (el final en este caso) */
+      grid-row-start: 2;
+      grid-row-end: 4;
+      /* Forma corta: grid-row: 2 / 4; */
+      background-color: #f39c12; /* Naranja */
+    }
+
+    .item-main {
+      /* El item va de la columna 2 a la 5 */
+      grid-column: 2 / 5;
+      grid-row: 2 / 3; /* Ocupa solo la segunda fila */
+      background-color: #2980b9; /* Azul */
+    }
+    .item-footer {
+      grid-column: 2 / 5;
+      grid-row: 3 / 4; /* Ocupa solo la tercera fila */
+      background-color: #c0392b; /* Rojo */
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Layout con Grid</h1>
+
+  <h2>1. <code>grid-template-columns</code></h2>
+  <p>Tres columnas de igual tamaño (<code>1fr 1fr 1fr</code>):</p>
+  <div class="caja-demo grid-container g-cols-3">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+
+  <p style="margin-top: 20px;">Columnas con tamaños mixtos (<code>100px auto 200px</code>):</p>
+  <div class="caja-demo grid-container g-cols-mixed">
+    <div class="item">100px</div>
+    <div class="item">auto</div>
+    <div class="item">200px</div>
+  </div>
+
+  <h2>2. <code>grid-template-rows</code></h2>
+  <p>Dos filas con alturas definidas (<code>100px 50px</code>):</p>
+  <div class="caja-demo grid-container g-rows-2">
+    <div class="item">Fila 1</div>
+    <div class="item">Fila 1</div>
+    <div class="item">Fila 1</div>
+    <div class="item">Fila 2</div>
+    <div class="item">Fila 2</div>
+    <div class="item">Fila 2</div>
+  </div>
+
+  <h2>3. Posicionamiento Manual (Layout Complejo)</h2>
+  <p>Creando un layout tipo "holy grail" con grid:</p>
+  <div class="caja-demo g-posicion">
+    <div class="item item-header">Header</div>
+    <div class="item item-sidebar">Sidebar</div>
+    <div class="item item-main">Main Content</div>
+    <div class="item item-footer">Footer</div>
+  </div>
+
+</body>
+</html>
