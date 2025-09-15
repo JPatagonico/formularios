@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Taller de Reparación</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <h1 class="title has-text-centered">Formulario de Contacto</h1>
+          <p class="subtitle has-text-centered">Reparaciones de Confianza para su Vehículo</p>
+
+          <form action="#" method="POST">
+            <div class="field">
+              <label class="label">Nombre Completo</label>
+              <div class="control has-icons-left">
+                <input class="input is-medium" type="text" placeholder="Ej: Juan Pérez" required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Correo Electrónico</label>
+              <div class="control has-icons-left">
+                <input class="input is-medium" type="email" placeholder="Ej: juan.perez@example.com" required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Teléfono</label>
+              <div class="control has-icons-left">
+                <input class="input is-medium" type="tel" placeholder="Ej: +54 9 11 1234-5678">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-phone"></i>
+                </span>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="field">
+              <label class="label">Marca y Modelo del Auto</label>
+              <div class="control">
+                <input class="input is-medium" type="text" placeholder="Ej: Ford Focus">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Año del Auto</label>
+              <div class="control">
+                <input class="input is-medium" type="number" placeholder="Ej: 2018" min="1980" max="2025">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Tipo de Servicio</label>
+              <div class="control">
+                <div class="select is-fullwidth is-medium">
+                  <select>
+                    <option>Mantenimiento General</option>
+                    <option>Problemas de Motor</option>
+                    <option>Servicio de Frenos</option>
+                    <option>Problemas Eléctricos</option>
+                    <option>Servicio de Neumáticos</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Descripción del Problema</label>
+              <div class="control">
+                <textarea class="textarea is-medium" placeholder="Describa el problema con el mayor detalle posible..."></textarea>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button class="button is-primary is-fullwidth is-medium">
+                  <span class="icon">
+                    <i class="fas fa-paper-plane"></i>
+                  </span>
+                  <span>Enviar Solicitud</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
